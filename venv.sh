@@ -5,15 +5,15 @@ activate_default_venv () {
   echo "Activating default virtual environment";
 }
 activate_django_venv () {
-  source "$HOME/dev/python/django";
-  echo "Activating django venv."
+  source "$HOME/dev/python/django/bin/activate";
+  echo "Activating django venv.";
 
 }
 
 case $1 in
   -a | --activate) activate_default_venv
   ;;
-  -django | --activate_django_venv
+  django) activate_django_venv
   ;;
   -e | --exit) deactivate; echo "Deactivating virtual environment"
   ;;
